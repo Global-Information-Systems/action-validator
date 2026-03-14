@@ -1,4 +1,4 @@
-name: action-validator
+name: Action-validator
 description: Downloads, caches, and runs action-validator with verbose output on files tracked by Git.
 inputs:
   version:
@@ -9,8 +9,8 @@ inputs:
     description: 'Newline-separated list of git ls-files patterns'
     required: true
     default: |
-      :(glob).github/**/action.yml
-      :(glob).github/**/action.yaml
+      :(glob).github/**/Action.yml
+      :(glob).github/**/Action.yaml
       .github/workflows/*.yml
       .github/workflows/*.yaml
 branding:
@@ -49,7 +49,7 @@ runs:
         version: ${{ inputs.version }}
       run: |
         if [[ "$version" = "latest" ]]; then
-          tag="$(gh release view --repo mpalmer/action-validator --json tagName -q .tagName)"
+          tag="$(gh release view --repo tijuks/Action-validator --json tagName -q .tagName)"
           version="${tag#v}"
         fi
         echo "version=$version" >> "$GITHUB_OUTPUT"
