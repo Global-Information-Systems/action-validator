@@ -3,11 +3,11 @@ description: Downloads, caches, and runs action-validator with verbose output on
 inputs:
   version:
     description: action-validator version in semver format without the 'v' prefix
-    required: false
+    required: true
     default: "latest"
   patterns:
     description: 'Newline-separated list of git ls-files patterns'
-    required: false
+    required: true
     default: |
       :(glob).github/**/action.yml
       :(glob).github/**/action.yaml
